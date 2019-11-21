@@ -2,14 +2,12 @@ import axios from 'axios'
 // 提取公共部分路径信息进行文件路径简写
 axios.defaults.baseURL="/static/"
 
-
-
-//请求的拦截
-axios.interceptors.request.use((config)=>{
-config.headers.a="1234"
-console.log(config);
-return config
-})
+// //请求的拦截
+// axios.interceptors.request.use((config)=>{
+// config.headers.a="1234"
+// console.log(config);
+// return config
+// })
 //数据响应的拦截
 axios.interceptors.response.use((res)=>{
     return res.data;

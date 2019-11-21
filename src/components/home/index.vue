@@ -1,18 +1,19 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-   <input type="text" placeholder="输入您要搜索的宝贝">
-   <top>
-   <carrousel :swiperSlides="bannerlist"></carrousel>
+   <input type="text" placeholder="输入您要1搜索的宝贝">
+    <carrousel :swiperSlides="bannerlist"></carrousel>
+    <!--<top>
+  
     home
-   </top>
+   </top> -->
   </div>
   
 </template>
 <script>
-import carrousel from '../base/mySwipe'
-import Top from '../base/Top'
-import {getBanner,getBanners} from '../baseapi'
+import carrousel from '../../publiccomponent/swiper'
+// import Top from '../base/Top'
+import {getBanner,getBanners} from '../../baseapi'
 export default {
   name: 'home',
   data () {
@@ -22,7 +23,7 @@ export default {
   },
   components:{
     carrousel,
-    Top
+    // Top
   },
   created(){
      this.getb();
