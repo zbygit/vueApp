@@ -10,7 +10,7 @@ export default {
   name: 'shopingcar',
   data () {
     return {
-      msg: '购物车'
+      msg: '购物车1'
     }
   }
 }
