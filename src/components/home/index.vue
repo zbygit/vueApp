@@ -1,18 +1,13 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+  
    <input type="text" placeholder="输入您要1搜索的宝贝">
     <carrousel :swiperSlides="bannerlist"></carrousel>
-    <!--<top>
-  
-    home
-   </top> -->
   </div>
   
 </template>
 <script>
 import carrousel from '../../publiccomponent/swiper'
-// import Top from '../base/Top'
 import {getBanner,getBanners} from '../../baseapi'
 export default {
   name: 'home',
@@ -31,7 +26,7 @@ export default {
   methods:{
     getb(){
         return getBanner().then((res)=>{
-          this.bannerlist=res.data.banner;
+          this.bannerlist=res.banner;
           console.log(this.bannerlist);
           
       })

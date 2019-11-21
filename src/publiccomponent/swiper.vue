@@ -14,7 +14,9 @@
     data() {
       return {
         swiperOption: {
-          pagination:'.swiper-pagination'
+          pagination:'.swiper-pagination',
+          loop:true,
+          autoplay:1500
         }
       }
     }
