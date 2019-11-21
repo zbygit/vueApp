@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+
     <router-view/>
+    <bottom></bottom>
   </div>
 </template>
 
 <script>
+import bottom from './publiccomponent/bottomNav'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    bottom
+  }
 }
 </script>
 
