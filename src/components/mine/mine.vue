@@ -13,7 +13,7 @@ export default {
   name: 'mine',
   data () {
     return {
-      pageMsg: '我的'
+      pageMsg: '我的分支'
     }
   },
   components:{
