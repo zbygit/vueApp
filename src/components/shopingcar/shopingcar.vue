@@ -1,17 +1,23 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-
+<topNav>
+<div slot="center">{{pageMsg}}</div>
+</topNav>
   </div>
 </template>
 
 <script>
+import topNav from '../../publiccomponent/topNav'
+
 export default {
   name: 'shopingcar',
   data () {
     return {
-      msg: '购物车'
+      pageMsg: '购物车'
     }
+  },
+  components:{
+    topNav
   }
 }
 </script>

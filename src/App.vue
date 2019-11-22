@@ -14,6 +14,8 @@ export default {
     bottom
   }
 }
+
+
 </script>
 
 <style>
