@@ -37,14 +37,15 @@ export default {
   name: "home",
   data() {
     return {
-      pageMsg: '首页'
+      pageMsg: '首页',
+       bannerlist: [],
+      hotlist:[]
     }
   },
   components:{
     carrousel,
     topNav,
-      bannerlist: [],
-      hotlist:[]
+     
     
   },
   created() {
