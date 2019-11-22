@@ -4,8 +4,7 @@
       <div slot="center">{{pageMsg}}</div>
     </topNav>
 
-    <input type="text" placeholder="输入您要1搜索的宝贝" />
-    <input type="text" placeholder="输入您要搜索的宝贝" class="ipt" />
+     <input type="text" placeholder="输入您要搜索的宝贝" class="ipt" />
     <carrousel :swiperSlides="bannerlist"></carrousel>
     <div id="pig">
       <ul>
