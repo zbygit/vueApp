@@ -8,7 +8,7 @@
     <carrousel :swiperSlides="bannerlist"></carrousel>
     <div id="pig">
       <ul>
-        <li>菲茨</li>
+        <li @click="ff">菲茨</li>
         <li>香奈儿</li>
         <li>服装</li>
         <li>其他</li>
@@ -51,6 +51,9 @@ export default {
     this.getb();
   },
   methods: {
+    ff(){
+      alert($(this)); 
+    },
     getb() {
       return getBanner().then(res => {
         this.bannerlist = res.banner;
