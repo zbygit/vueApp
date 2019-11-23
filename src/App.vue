@@ -1,30 +1,38 @@
 <template>
   <div id="app">
-
-    <router-view/>
+    <router-view />
     <bottom></bottom>
   </div>
 </template>
 
 <script>
-import bottom from './publiccomponent/bottomNav'
+import bottom from "./publiccomponent/bottomNav";
+import { setGlobalRem } from "../src/assets/js/public";
 export default {
-  name: 'App',
-  components:{
+  name: "App",
+  components: {
     bottom
+  },
+  created() {
+    this.setGlobalRemS();
+  },
+  methods: {
+    setGlobalRemS() {
+      setGlobalRem();
+    }
   }
-}
-
-
+};
 </script>
 
 <style>
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 4rem;
+  font-size: 1.6rem;
 }
 </style>

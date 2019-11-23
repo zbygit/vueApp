@@ -3,8 +3,11 @@
     <topNav>
       <div slot="center">{{pageMsg}}</div>
     </topNav>
+    <div class="search">
+      <input type="text" placeholder="输入您要搜索的宝贝" class="ipt" />
+      <span class="msg"></span>
+    </div>
 
-     <input type="text" placeholder="输入您要搜索的宝贝" class="ipt" />
     <carrousel :swiperSlides="bannerlist"></carrousel>
     <div id="pig">
       <ul>
@@ -28,33 +31,39 @@
   </div>
 </template>
 <script>
-import topNav from '../../publiccomponent/topNav'
-import carrousel from '../../publiccomponent/swiper'
-import {getBanner,getBanners} from '../../baseapi'
+import topNav from "../../publiccomponent/topNav";
+import carrousel from "../../publiccomponent/swiper";
+import { getBanner, getBanners } from "../../baseapi";
 
 export default {
   name: "home",
   data() {
     return {
-      pageMsg: '首页',
-       bannerlist: [],
-      hotlist:[]
-    }
+      pageMsg: "奈商城",
+      bannerlist: [],
+      hotlist: []
+    };
   },
-  components:{
+  components: {
     carrousel,
-    topNav,
-     
-    
+    topNav
   },
   created() {
     this.getb();
+    this.setNav();
   },
   methods: {
+    setNav() {
+      var index = this.$route.query.index;
+      $(`#bottom>div`)
+        .eq(index)
+        .css("color", "#6FA3C4")
+        .siblings()
+        .css("color", "#cccccc");
+    },
     getb() {
       return getBanner().then(res => {
         this.bannerlist = res.banner;
-        console.log(this.bannerlist);
       });
     }
   }
@@ -62,25 +71,68 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-input {
-  border: 1px solid gray;
-  width: 100%;
-  height: 45px;
-  background: url("../../assets/img/search.svg") 0 no-repeat;
-  background-size: 6%;
-  text-indent: 2em;
+.search {
+  height: 3rem;
+
+  margin: 0 1rem;
+  width: calc(100% - 2rem);
+
+  .ipt {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    border: none;
+    outline: none;
+    width: calc(100% - 4rem);
+    background: url("../../assets/img/search.png") 1rem center no-repeat;
+    background-size: 1.5rem;
+    text-indent: 3rem;
+    border-radius: 5px;
+  }
+  .msg {
+    float: right;
+    border-left: 1px solid #cccccc;
+    width: 3rem;
+    margin-left: -1px;
+    height: 100%;
+    background: url("../../assets/img/home_msg.png") center no-repeat;
+    background-size: 2rem;
+  }
 }
+
 #pig {
   width: 100%;
   height: 5rem;
-  ul li {
-    background: url("../../assets/img/video.svg") center 0 no-repeat;
+  ul {
     float: left;
-    width: 25%;
-    height: 4rem;
+    width: 100%;
+    height: 5rem;
     line-height: 5rem;
     list-style: none;
-    background-size: 30px;
+
+    li {
+      float: left;
+      width: 25%;
+      height: 5rem;
+      text-align: center;
+      line-height: 8rem;
+    }
+    li:nth-of-type(1) {
+      background: url("../../assets/img/home_Item1.png") center 0 no-repeat;
+      background-size: 30px;
+    }
+    li:nth-of-type(2) {
+      background: url("../../assets/img/home_Item2.png") center 0 no-repeat;
+      background-size: 30px;
+    }
+    li:nth-of-type(3) {
+      background: url("../../assets/img/home_Item3.png") center 0 no-repeat;
+      background-size: 30px;
+    }
+    li:nth-of-type(4) {
+      background: url("../../assets/img/home_Item4.png") center 0 no-repeat;
+      background-size: 30px;
+    }
   }
 }
 .bottom {
