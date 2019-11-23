@@ -3,26 +3,39 @@
     <topNav>
       <div slot="center">{{pageMsg}}</div>
     </topNav>
-
   </div>
 </template>
 
 <script>
-import topNav from '../../publiccomponent/topNav'
+import topNav from "../../publiccomponent/topNav";
+
 export default {
-  name: 'mine',
-  data () {
+  name: "mine",
+  data() {
     return {
-      pageMsg: '我的'
-    }
+      pageMsg: "我的"
+    };
   },
-  components:{
+  components: {
     topNav
+  },
+
+  mounted() {
+    this.setNav();
+  },
+  methods: {
+    setNav() {
+      var index = this.$route.query.index;
+      $(`#bottom>div`)
+        .eq(index)
+        .css("color", "#6FA3C4")
+        .siblings()
+        .css("color", "#cccccc");
+    }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-
 </style>
