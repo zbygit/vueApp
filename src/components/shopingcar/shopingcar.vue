@@ -3,12 +3,13 @@
     <topNav>
       <div slot="center">{{pageMsg}}</div>
     </topNav>
+  <div slot="bottom"><bottom></bottom></div>
   </div>
 </template>
 
 <script>
-import topNav from "../../publiccomponent/topNav";
-
+import topNav from "../../publiccomponent/topNav"
+import bottom from "../../publiccomponent/bottomNav"
 export default {
   name: "shopingcar",
   data() {
@@ -17,7 +18,7 @@ export default {
     };
   },
   components: {
-    topNav
+    topNav,bottom
   },
 
   mounted() {

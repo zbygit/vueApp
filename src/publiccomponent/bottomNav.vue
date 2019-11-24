@@ -15,8 +15,9 @@
 <script>
 export default {
   name: "bottom",
-  mounted() {
+   mounted() {
     this.setNav();
+    this.bottomShow();
   },
   methods: {
     setNav() {
@@ -26,6 +27,14 @@ export default {
         .addClass("currentPage")
         .siblings()
         .removeClass("currentPage");
+    },
+    bottomShow() {
+      var status = this.$route.query.bottom;
+      if (!status && status != undefined) {
+        $("#bottom").hide();
+      } else {
+        return;
+      }
     }
   }
 };
@@ -41,6 +50,7 @@ export default {
   border-top: 1px solid #cccccc;
   display: flex;
   left: 0;
+  font-size: 1.6rem;
   div {
     flex: 1;
     height: 60px;

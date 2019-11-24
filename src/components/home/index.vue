@@ -28,10 +28,12 @@
         <span>{{item.bookInfo}}</span>
       </li>
     </ul>
+    <div slot="bottom"><bottom></bottom></div>
   </div>
 </template>
 <script>
 import topNav from "../../publiccomponent/topNav";
+import bottom from "../../publiccomponent/bottomNav"
 import carrousel from "../../publiccomponent/swiper";
 import { getBanner, getBanners } from "../../baseapi";
 
@@ -46,7 +48,8 @@ export default {
   },
   components: {
     carrousel,
-    topNav
+    topNav,
+    bottom
   },
   created() {
     this.getb();

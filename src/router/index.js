@@ -3,27 +3,31 @@ import Router from 'vue-router'
 import home from '@/components/home/index'
 import shopingcar from '@/components/shopingcar/shopingcar'
 import mine from '@/components/mine/mine'
+import order from '@/components/mine/order'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: home
+    routes: [{
+        path: '/',
+        name: 'home',
+        component: home
     }, {
-      path: '/home',
-      name: 'home',
-      component: home
+        path: '/home',
+        name: 'home',
+        component: home
     }, {
-      path: '/shopingcar',
-      name: 'shopingcar',
-      component: shopingcar
+        path: '/shopingcar',
+        name: 'shopingcar',
+        component: shopingcar
     }, {
-      path: '/mine',
-      name: 'mine',
-      component: mine
-    }
-  ]
+        path: '/mine',
+        name: 'mine',
+        component: mine,
+
+    }, {
+        path: '/order',
+        name: 'order',
+        component: order
+    }]
 })

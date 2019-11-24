@@ -30,6 +30,7 @@ export default {
   left: 0;
   width: 100%;
   height: 4rem;
+  font-size: 1.8rem;
   background: #ff6600;
   display: flex;
   div {
@@ -39,9 +40,9 @@ export default {
   }
   div:nth-of-type(1) {
     width: 20%;
-
     div {
       width: 100%;
+      img{vertical-align: middle}
     }
   }
   div:nth-of-type(2) {

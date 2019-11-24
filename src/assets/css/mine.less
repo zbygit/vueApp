@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+// 用戶头像
+#userInfo{
+    width: 100%;
+    height: 16rem;
+    background: #6693A6;
+      position: relative;
+    .userArea{
+        width: 100%;
+        height: 10rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    img{
+      height: 8rem;
+      border-radius: 50%;
+    }
+    p{
+        height: 2rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        color: #ffffff;
+       
+    }
+}
+}
+   @itemSize: 1.3rem;
+   @fontWeight:600;
+// 操作区域
+.do{
+    width: 100%;
+    float: left;  
+
+    .item{
+        width: 100%;
+        float: left;
+        height: 4rem;
+        line-height: 4rem;
+        text-align: left;
+        border-bottom: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        .ItemLeft{
+            float: left;
+            width: 10rem;
+            height: 100%;
+            line-height: 4rem;
+            .btnIcon{
+                float: left;
+                height: 2rem;
+                margin: 1rem 1rem;
+            }
+            .btnText{
+                font-size:  @itemSize !important;
+                font-weight: @fontWeight;
+                float: left;
+                 height: 100%;
+              }
+           
+        }
+        .ItemRight{
+            float: left;
+            width: calc(100% - 10rem);
+            height: 100%;
+            line-height: 4rem;
+            .itemContent{
+                float: left;
+                width: calc(100% - 5rem);
+            }
+            .btnrow{
+                float: right;
+                width: 5rem;
+                height: 100%;
+               background: url("../img/arrow.png") center no-repeat;
+               background-size:  auto 1.6rem;
+            }
+        }
+    }
+}
+.empty{
+    float: left;
+    height: 1rem;
+    width: 100%;
+    background: #EFEFF4;
+}
+// 购物信息
+.msgInfo{
+
+    float: left;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+      div{
+        flex: 1;
+        line-height: 8rem;
+        font-size:  @itemSize !important;
+        font-weight: @fontWeight;
+        position: relative;
+        .num{
+        position: absolute;
+        left: 55% ;
+        top: 14%;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: red;
+        z-index: 1;
+        font-style: normal;
+        color: #ffffff;
+        line-height: 1.5rem;
+        font-weight: bold;
+        }
+    }
+    div:nth-of-type(1){
+     background: url("../img/wait_pay.png")center 1rem no-repeat;
+     background-size: 2rem auto;
+    }
+    div:nth-of-type(2){
+        background: url("../img/wait_send.png")center 1rem no-repeat;
+        background-size: 2rem auto;
+       }
+       div:nth-of-type(3){
+        background: url("../img/wait_comm.png")center 1rem no-repeat;
+        background-size: 2rem auto;
+       }
+}
+// 其他操作
+.otherDo{
+    float: left;
+    width: 100%;
+    div{
+        border-top: 1px;
+        margin-top: -1px;
+    }
+}

@@ -1,19 +1,16 @@
 <template>
   <div id="app">
     <router-view />
-    <bottom></bottom>
-  </div>
+    <slot name="botom"></slot>
+    </div>
 </template>
 
 <script>
-import bottom from "./publiccomponent/bottomNav";
-import { setGlobalRem } from "../src/assets/js/public";
+
+import { setGlobalRem } from "../src/assets/js/public"
 export default {
   name: "App",
-  components: {
-    bottom
-  },
-  created() {
+   created() {
     this.setGlobalRemS();
   },
   methods: {
@@ -33,6 +30,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 4rem;
-  font-size: 1.6rem;
+ font-size: 1.6rem;
 }
 </style>
