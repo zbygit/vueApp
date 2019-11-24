@@ -1,7 +1,7 @@
 <template>
   <div id="top">
-    <div class="left" @click="goBack" >
-      <slot name="left" ></slot>
+    <div class="left" @click="goBack">
+      <slot name="left"></slot>
     </div>
     <div class="center">
       <slot name="center"></slot>
@@ -15,9 +15,8 @@
 <script>
 export default {
   name: "top",
-  methods:
-  {
-    goBack(){
+  methods: {
+    goBack() {
       this.$router.back();
     }
   }
@@ -30,36 +29,36 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  height: 4rem;
+  font-size: 1.8rem;
   background: #ff6600;
   display: flex;
   div {
-    line-height: 40px;
+    line-height: 4rem;
     color: #ffffff;
-  
+    height: 4rem;
   }
   div:nth-of-type(1) {
     width: 20%;
-    height: 40px;
-      div{
-        width: 100%;
+    div {
+      width: 100%;
+      img{vertical-align: middle}
     }
   }
   div:nth-of-type(2) {
     width: 60%;
     background: #ff6600;
-    height: 40px;
     font-weight: 900;
     text-align: center;
-      div{
-        width: 100%;
+    div {
+      width: 100%;
     }
   }
   div:nth-of-type(3) {
     width: 20%;
-    height: 40px;
-      div{
-        width: 100%;
+
+    div {
+      width: 100%;
     }
   }
 }

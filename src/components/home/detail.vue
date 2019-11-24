@@ -2,10 +2,10 @@
   <div>
     <top>
       <div slot="center">{{msg}}</div>
-      <div slot="left">返回</div>
-      <div slot="right">{{this.$route.query.index}}</div>
+      <div slot="left"> <img src="../../assets/img/back.png" alt srcset /></div>
+      <div slot="right">{{this.$route.query.id}}</div>
     </top>
-    <carrousel :swiperSlides="xiangqing"></carrousel>
+    <carrousel class="swiperbox" :swiperSlides="xiangqing"></carrousel>
   </div>
 </template>
 <script>
@@ -30,6 +30,8 @@ export default {
   methods: {
     xiang() {
       return getdetail().then(res => {
+        console.log(res.xiang);
+        
         this.xiangqing = res.xiang;
       });
     }
@@ -37,7 +39,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-img{
+.swiperbox img{
   height: 100px;
   width: 100%;
 }
