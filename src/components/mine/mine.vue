@@ -2,6 +2,7 @@
   <div class="hello">
     <topNav>
       <div slot="center">{{pageMsg}}</div>
+     <div slot="left">返回</div>
     </topNav>
 
   </div>

@@ -3,8 +3,7 @@
     <topNav>
       <div slot="center">{{pageMsg}}</div>
     </topNav>
-
-     <input type="text" placeholder="输入您要搜索的宝贝" class="ipt" />
+    <input type="text" placeholder="输入您要搜索的宝贝" />
     <carrousel :swiperSlides="bannerlist"></carrousel>
     <div id="pig">
       <ul>
@@ -17,50 +16,57 @@
     <div class="bottom">
       <span>——— 精选推荐 ———</span>
     </div>
-    <ul>
-      <li v-for="(item,index) of hotlist" :key="index">
-        <img @click="detail(index)" :src="item.bookImg" alt />
-        <span>{{item.bookName}}</span>
-        <span>{{item.bookPrice}}</span>
-        <span>{{item.bookInfo}}</span>
-      </li>
-    </ul>
+    <div id="con">
+      <ul>
+        <li v-for="(item,index) of hotlist" :key="index">
+          <img @click="detail(index)" :src="item.bookImg" alt />
+          <span>{{item.bookName}}</span>
+          <span>￥{{item.bookPrice}}</span>
+          <span>{{item.bookInfo}}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
-import topNav from '../../publiccomponent/topNav'
-import carrousel from '../../publiccomponent/swiper'
-import {getBanner,getBanners} from '../../baseapi'
+import topNav from "../../publiccomponent/topNav";
+import carrousel from "../../publiccomponent/swiper";
+import { getBanner, gethotlist } from "../../baseapi";
 
 export default {
   name: "home",
   data() {
     return {
-      pageMsg: '首页',
-       bannerlist: [],
-      hotlist:[]
-    }
+      pageMsg: "首页",
+      bannerlist: [],
+      hotlist: []
+    };
   },
-  components:{
+  components: {
     carrousel,
-    topNav,
-     
-    
+    topNav
   },
   created() {
-    this.getb();
+    this.banner();
+    this.hotlists();
   },
   methods: {
-    getb() {
+    banner() {
       return getBanner().then(res => {
         this.bannerlist = res.banner;
-        console.log(this.bannerlist);
       });
+    },
+    hotlists() {
+      return gethotlist().then(res => {
+        this.hotlist = res.hotlist;
+      });
+    },
+    detail(index) {
+      this.$router.push({ path: "/detail", query: { index: index } });
     }
   }
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 input {
   border: 1px solid gray;
@@ -89,6 +95,29 @@ input {
   span {
     line-height: 50px;
     color: grey;
+  }
+}
+#con ul {
+  display: inline-block;
+  width: 100%;
+  li {
+    display: inline-block;
+    width: 50%;
+    height: 8rem;
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+    span {
+      font-size: 10px;
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: normal;
+      height: 2rem;
+    }
+   
   }
 }
 </style>

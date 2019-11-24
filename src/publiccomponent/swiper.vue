@@ -25,5 +25,6 @@
 <style lang="less" scoped>
 img{
   width: 100%;
+  height: 180px;
 }
 </style>

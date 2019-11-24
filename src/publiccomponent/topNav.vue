@@ -21,7 +21,7 @@ export default {
       this.$router.back();
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

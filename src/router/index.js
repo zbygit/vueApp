@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home/index'
 import shopingcar from '@/components/shopingcar/shopingcar'
 import mine from '@/components/mine/mine'
+import detail from '@/components/home/detail'
 
 Vue.use(Router)
 
@@ -24,6 +25,12 @@ export default new Router({
       path: '/mine',
       name: 'mine',
       component: mine
+    }, {
+      path: '/detail',
+      name: 'detail',
+      component: detail
     }
+
+    
   ]
 })

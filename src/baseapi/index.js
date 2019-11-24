@@ -14,11 +14,15 @@ axios.interceptors.response.use((res)=>{
 })
 //axios是封装的promise
 export let getBanner=function () {
-    // get(url)  url代表路径
-
+    // get(url)  url代表路
     return axios.get('data/banner.json');//promise实例
 }
+
 export let gethotlist=function () {
     return axios.get('data/hotlist.json');
 }
+export let getdetail=function () {
+    return axios.get('data/xiangqing.json');
+}
+
 
