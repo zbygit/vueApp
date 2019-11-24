@@ -48,6 +48,7 @@ export default {
   div:nth-of-type(2) {
     width: 60%;
     background: #ff6600;
+
     font-weight: 900;
     text-align: center;
     div {

@@ -37,4 +37,5 @@ export default new Router({
         name: 'order',
         component: order
     }]
+
 })
