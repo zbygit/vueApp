@@ -9,7 +9,7 @@
     </topNav>
     <orderNav></orderNav>
     <div class="empty"></div>
- 
+
     <orderList>
       <div slot="time">2011-21-11</div>
       <div slot="orderStatus1" v-if="current==0">已完成</div>
@@ -68,7 +68,10 @@ export default {
       for (let index = 0; index < orderNav.length; index++) {
         $(orderNav[index]).click(function() {
           that.current = index;
-      $(this).addClass("currentLi").siblings().removeClass("currentLi");;
+          $(this)
+            .addClass("currentLi")
+            .siblings()
+            .removeClass("currentLi");
         });
       }
     }
