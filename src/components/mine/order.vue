@@ -68,7 +68,7 @@ export default {
       for (let index = 0; index < orderNav.length; index++) {
         $(orderNav[index]).click(function() {
           that.current = index;
-      $(this).addClass("currentLi").siblings().removeClass("currentLi");;
+      $(this).addClass("currentLi").siblings().removeClass("currentLi");
         });
       }
     }

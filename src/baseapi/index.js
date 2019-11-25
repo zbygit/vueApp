@@ -21,6 +21,9 @@ export let getBanner=function () {
 export let gethotlist=function () {
     return axios.get('data/hotlist.json');
 }
+export let getHome=function () {
+    return axios.get('data/home.json');
+}
 export let getdetail=function () {
     return axios.get('data/xiangqing.json');
 }
