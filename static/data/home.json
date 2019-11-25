@@ -2,7 +2,7 @@
     "home": [
         {
             "goodsId": 0,
-            "goodsIconHome": "//img13.360buyimg.com/n2/s240x240_jfs/t1/48517/27/1211/250162/5cef78f8E6fc2ad79/b932afe164328fb6.jpg!q70.jpg",
+            "goodsIconHome": "http://ec4.images-amazon.com/images/I/51XK-hooLBL._SL500_AA300_.jpg",
             "goodsName": "男女款抖音网红鹿晗活口指环时尚饰品首饰七夕礼物",
             "goodsPriceNew": "1300",
             "goodsPriceOld": "2503",
@@ -21,14 +21,15 @@
                     "src": "http://a1.att.hudong.com/02/52/300001202343130274523014865_950.jpg"
                 }
             ],
-        
-            "detail":"产品参数：产品名称：WETHERM/温碧泉 元气活肌...品牌: WETHERM/温碧泉乳液/面霜单品: 元气活肌乳上市时间: 2016年月份: 12月效: 修护 保湿是否为特殊用途化妆品: 否规格类型: 正常规格是否进口: 国批准文号: 粤G妆网备字2016093111化妆品净含量: 110ml使用日期范围: 2020-03-01至2020-03-20",
-            "eval":["用户名：jd_139572ntk睡衣裤颜色我很喜欢，质地超好，的确全棉，穿着相当的舒适，且一点也未有退色。满意 "],
-            "sale":"卖家服务京东承诺京东平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！正品行货京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。 权利声明：京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。注：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任"
+            "detail": "产品参数：产品名称：WETHERM/温碧泉 元气活肌...品牌: WETHERM/温碧泉乳液/面霜单品: 元气活肌乳上市时间: 2016年月份: 12月效: 修护 保湿是否为特殊用途化妆品: 否规格类型: 正常规格是否进口: 国批准文号: 粤G妆网备字2016093111化妆品净含量: 110ml使用日期范围: 2020-03-01至2020-03-20",
+            "eval": [
+                "用户名：jd_139572ntk睡衣裤颜色我很喜欢，质地超好，的确全棉，穿着相当的舒适，且一点也未有退色。满意 "
+            ],
+            "sale": "卖家服务京东承诺京东平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！正品行货京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。 权利声明：京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。注：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任"
         },
         {
             "goodsId": 1,
-            "goodsIconHome": "//img13.360buyimg.com/n2/s240x240_jfs/t1/48517/27/1211/250162/5cef78f8E6fc2ad79/b932afe164328fb6.jpg!q70.jpg",
+            "goodsIconHome": "http://ec4.images-amazon.com/images/I/41hrwT4YwIL._SL500_AA300_.jpg",
             "goodsName": "十二星座夜光情侣手链男女款手工编织多层硅胶手环",
             "goodsPriceNew": "100",
             "goodsPriceOld": "80",
@@ -53,17 +54,24 @@
         },
         {
             "goodsId": 2,
-            "goodsIconHome": "//img13.360buyimg.com/n2/s240x240_jfs/t1/48517/27/1211/250162/5cef78f8E6fc2ad79/b932afe164328fb6.jpg!q70.jpg",
+            "goodsIconHome": "http://ec4.images-amazon.com/images/I/518A0ij-snL._SL500_AA300_.jpg",
             "goodsName": "送女友生日七夕情人节礼物 心中有你 项链",
             "goodsPriceNew": "100",
             "goodsPriceOld": "80",
             "free": "包邮3",
             "goodsBanner": [
-                123,
-                456,
-                789,
-                123,
-                246
+                {
+                    "src": "http://s9.rr.itc.cn/r/wapChange/20166_6_15/a0whj25906446458352.jpg"
+                },
+                {
+                    "src": "http://filestore.plan.51xuanxiao.com/resources/chinaUniversityImage/531/p00046074_20160602104839.jpeg"
+                },
+                {
+                    "src": "http://www.bisu.edu.cn/picture/0/1707152245499839306.jpg"
+                },
+                {
+                    "src": "http://img.mp.itc.cn/upload/20170303/0b8c2967e7b7401f969e043a1be33ae0_th.jpg"
+                }
             ],
             "detail": "4324324242342342424242424234",
             "eval": [],
@@ -71,17 +79,24 @@
         },
         {
             "goodsId": 3,
-            "goodsIconHome": "//img13.360buyimg.com/n2/s240x240_jfs/t1/48517/27/1211/250162/5cef78f8E6fc2ad79/b932afe164328fb6.jpg!q70.jpg",
+            "goodsIconHome": "http://ec4.images-amazon.com/images/I/41tqTiLLr0L._SL500_AA300_.jpg",
             "goodsName": "男女情侣街头百搭项链 枪黑色三环字母十字架项链",
             "goodsPriceNew": "100",
             "goodsPriceOld": "80",
             "free": "包邮4",
             "goodsBanner": [
-                123,
-                456,
-                789,
-                123,
-                246
+                {
+                    "src": "http://s9.rr.itc.cn/r/wapChange/20166_6_15/a0whj25906446458352.jpg"
+                },
+                {
+                    "src": "http://filestore.plan.51xuanxiao.com/resources/chinaUniversityImage/531/p00046074_20160602104839.jpeg"
+                },
+                {
+                    "src": "http://www.bisu.edu.cn/picture/0/1707152245499839306.jpg"
+                },
+                {
+                    "src": "http://img.mp.itc.cn/upload/20170303/0b8c2967e7b7401f969e043a1be33ae0_th.jpg"
+                }
             ],
             "detail": "4324324242342342424242424234",
             "eval": [],

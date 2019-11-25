@@ -32,7 +32,7 @@
     <ul id="bottom">
       <li>
         <span>客服</span>
-        <span @click="count">收藏</span>
+        <span id="count" @click="count(currentGoods.goodsId)">收藏</span>
       </li>
       <li>加入购物车</li>
       <li>立即购买</li>
@@ -43,6 +43,7 @@
 import top from "../../publiccomponent/topNav";
 import carrousel from "../../publiccomponent/swiper";
 import { getHome } from "../../baseapi";
+import Cookies from "js-cookie";
 export default {
   name: "detail",
   data() {
@@ -61,25 +62,29 @@ export default {
   },
   mounted() {
     this.getDom();
+    this.setCount();
   },
   methods: {
-    xiang() {
+    // 页面加载时获取当前项的各项信息用于显示
+    xiang() { //该方法定义在created中，vue生命周期函数created执行后，data中的数据可以获取
       return getHome().then(res => {
+        // 通过this.$route.query.属性名 获取页面传递的参数
+        // getHome().then(res)中res为json文件中的所有内容，是一个数组
+        // 通过id获取数据数组中的某项内容信息（id起始值与数组的下标起始值一致，均为0）
         this.currentGoods = res.home[this.$route.query.goodsId];
         this.content = this.currentGoods.detail;
-        console.log(this.currentGoods);
       });
     },
-
-    getDom() {
-      let that = this;
-      let li = $(".info li");
-      for (let i = 0; i < li.length; i++) {
-        $(li[i]).click(function() {
-          $(this)
+    getDom() {  //该方法定义在mounted中，vue生命周期函数mounted执行后，dom结构被解析渲染
+      let that = this;//将vue的实例this赋值给that
+      let li = $(".info li");//使用jq方法获取li
+      for (let i = 0; i < li.length; i++) { //循环遍历li数组
+        $(li[i]).click(function() {//每项li点击事件
+          $(this)                 //this指向当前点击的li
             .addClass("active")
             .siblings()
             .removeClass("active");
+            // 判断循环下标i的值，获取指定的内容变更content
           switch (i) {
             case 0:
               that.content = that.currentGoods.detail;
@@ -96,7 +101,45 @@ export default {
         });
       }
     },
-    count() {}
+    // 设置页面进入是否处于收藏状态
+    setCount() { //该方法定义在mounted中，vue生命周期函数mounted执行后，dom结构被解析渲染
+      // 获取保存的cookie信息
+      let countCookie = Cookies.get("count");
+      let countCookieArray =
+        countCookie == undefined ? [] : JSON.parse(countCookie);
+      
+      let that = this;//将vue的实例this赋值给that
+      // 使用数组的some方法判断cookie数组中是否包含当前项的id
+      let countStatus = countCookieArray.some(function(item) {
+        return item == that.$route.query.goodsId;
+      });
+    // 返回值为true的时候将添加count类名
+      if (countStatus == true) {
+        $("#count").addClass("count");
+      }
+    },
+    // 收藏按钮点击事件
+    count(currentGoodsId) {
+       // 获取保存的cookie信息
+      let countCookie = Cookies.get("count");
+      let countCookieArray =
+        countCookie == undefined ? [] : JSON.parse(countCookie);
+
+      // 判断当前的收藏按钮是否包含count类名 
+      // 包含移除类名，并从cookie数组中移除该项的id
+      if ($("#count").attr("class") == "count") {
+        $("#count").removeClass("count");
+        countCookieArray = countCookieArray.filter(function(item) {
+          return item != currentGoodsId;
+        });
+      } else {
+        // 不包含count类名给按钮添加，并向cookie数组中追加该项id
+        $("#count").addClass("count");
+        countCookieArray.push(currentGoodsId);
+      }
+      // 使用cookies重新设置cookie
+      Cookies.set("count", JSON.stringify(countCookieArray), { expires: 7 });
+    }
   }
 };
 </script>
@@ -198,6 +241,10 @@ export default {
     }
     span:nth-of-type(2) {
       background: url("../../assets/img/coll.png") center 1rem no-repeat;
+      background-size: 30%;
+    }
+    span.count {
+      background: url("../../assets/img/coll_se.png") center 1rem no-repeat;
       background-size: 30%;
     }
   }
