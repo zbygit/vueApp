@@ -28,4 +28,8 @@ export let getdetail=function () {
     return axios.get('data/xiangqing.json');
 }
 
+export let getOrderList=function () {
+    return axios.get('data/orderList.json');
+}
+
 
