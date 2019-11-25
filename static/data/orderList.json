@@ -1,35 +1,44 @@
-[
-    {
-        "time": "2019-11-25",
-        "status": 0,
-        "goodsImg":"https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
-        "goodsColor":"蓝色+标准",
-        "goodsPrice":"345",
-        "goodsNum":"2",
-        "money":"6"
-    }, {
-        "time": "2019-11-25",
-        "status": 1,
-        "goodsImg":"https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
-        "goodsColor":"蓝色+标准",
-        "goodsPrice":"345",
-        "goodsNum":"2",
-        "money":"6"
-    }, {
-        "time": "2019-11-25",
-        "status": 2,
-        "goodsImg":"https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
-        "goodsColor":"蓝色+标准",
-        "goodsPrice":"345",
-        "goodsNum":"2",
-        "money":"6"
-    }, {
-        "time": "2019-11-25",
-        "status": 3,
-        "goodsImg":"https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
-        "goodsColor":"蓝色+标准",
-        "goodsPrice":"345",
-        "goodsNum":"2",
-        "money":"6"
-    }
-]
+{
+    "order": [
+        {
+            "time": "2019-11-25",
+            "status": 0,
+            "goodsName": "商品名称1",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "time": "2019-11-25",
+            "status": 1,
+            "goodsName": "商品名称2",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "time": "2019-11-25",
+            "status": 2,
+            "goodsName": "商品名称3",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "time": "2019-11-25",
+            "status": 3,
+            "goodsName": "商品名称4",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        }
+    ]
+}
