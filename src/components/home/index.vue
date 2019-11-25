@@ -35,7 +35,7 @@
 import topNav from "../../publiccomponent/topNav";
 import bottom from "../../publiccomponent/bottomNav"
 import carrousel from "../../publiccomponent/swiper";
-import { getBanner, getHome } from "../../baseapi";
+import { getBanner, getHome } from "../../baseapi"
 
 export default {
   name: "home",

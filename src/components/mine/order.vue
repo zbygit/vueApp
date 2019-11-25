@@ -49,9 +49,10 @@
 </template>
 
 <script>
-import topNav from "../../publiccomponent/topNav";
-import orderNav from "../../publiccomponent/orderNav";
-import orderList from "../../components/mine/orderList";
+import topNav from "../../publiccomponent/topNav"
+import orderNav from "../../publiccomponent/orderNav"
+import orderList from "../../components/mine/orderList"
+import { getBanner, getHome } from "../../baseapi"
 export default {
   name: "order",
   components: { topNav, orderNav, orderList },
@@ -72,6 +73,10 @@ export default {
             .addClass("currentLi")
             .siblings()
             .removeClass("currentLi");
+
+
+
+
         });
       }
     }
