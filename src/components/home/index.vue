@@ -22,10 +22,10 @@
     </div>
     <ul>
       <li v-for="(item,index) of hotlist" :key="index">
-        <img @click="detail(item.bookId)" :src="item.bookImg" alt />
-        <span>{{item.bookName}}</span>
-        <span>{{item.bookPrice}}</span>
-        <span>{{item.bookInfo}}</span>
+        <img @click="detail(item.goodsId)" :src="item.goodsIconHome" alt />
+        <div>{{item.goodsName}}</div>
+        <div>{{item.goodsPriceNew}}</div>
+        <div>{{item.goodsPriceOld}}</div>
       </li>
     </ul>
     <div slot="bottom"><bottom></bottom></div>
@@ -35,7 +35,7 @@
 import topNav from "../../publiccomponent/topNav";
 import bottom from "../../publiccomponent/bottomNav"
 import carrousel from "../../publiccomponent/swiper";
-import { getBanner, gethotlist } from "../../baseapi";
+import { getBanner, getHome } from "../../baseapi";
 
 export default {
   name: "home",
@@ -65,18 +65,20 @@ export default {
         .siblings()
         .css("color", "#cccccc");
     },
+    // 获取轮播图
     getb() {
       return getBanner().then(res => {
         this.bannerlist = res.banner;
       });
     },
+    // 获取商品数据
     hotlists() {
-      return gethotlist().then(res => {
-        this.hotlist = res.hotlist;
+      return getHome().then(res => {
+        this.hotlist = res.home;
       });
     },
     detail(index) {
-      this.$router.push({ path: "/detail", query: { id: index } });
+      this.$router.push({ path: "/detail", query: { goodsId: index } });
     }
   }
 };
