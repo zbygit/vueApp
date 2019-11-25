@@ -33,6 +33,7 @@ export default {
   font-size: 1.8rem;
   background: #ff6600;
   display: flex;
+
   div {
     line-height: 4rem;
     color: #ffffff;
