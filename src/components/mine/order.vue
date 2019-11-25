@@ -67,7 +67,9 @@ export default {
       let that = this;
       for (let index = 0; index < orderNav.length; index++) {
         $(orderNav[index]).click(function() {
+          Cookies.set('foo', 'bar')
           that.current = index;
+              Cookies.set('test',index);
       $(this).addClass("currentLi").siblings().removeClass("currentLi");;
         });
       }
