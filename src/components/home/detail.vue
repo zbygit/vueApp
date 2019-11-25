@@ -29,12 +29,14 @@
       <li>售后</li>
     </ul>
     <div id="content">{{content}}</div>
-    <div id="bottom">
-      <span>客服</span>
-      <span>收藏</span>
-      <span>加入购物车</span>
-      <span>立即购买</span>
-    </div>
+    <ul id="bottom">
+      <li>
+        <span>客服</span>
+        <span @click="count">收藏</span>
+      </li>
+      <li>加入购物车</li>
+      <li>立即购买</li>
+    </ul>
   </div>
 </template>
 <script>
@@ -93,7 +95,8 @@ export default {
           }
         });
       }
-    }
+    },
+    count() {}
   }
 };
 </script>
@@ -166,20 +169,43 @@ export default {
 }
 #bottom {
   border: 1px solid gray;
+  text-align: center;
   width: 100%;
   height: 5rem;
   position: fixed;
   bottom: 0;
-  span{
-    border:1px solid ghostwhite;
-    background-color: gainsboro;
-    display: inline-block;
-    width: 8rem;
-    flex:1;
-    
-   
-     
-
+  left: 0;
+  display: flex;
+  list-style: none;
+  color: white;
+  line-height: 5rem;
+  li {
+    flex: 1;
+    height: 100%;
+  }
+  li:nth-of-type(1) {
+    background: black;
+    line-height: 7.5rem;
+    span {
+      // display: inline-block;
+      width: 50%;
+      height: 100%;
+      float: left;
+    }
+    span:nth-of-type(1) {
+      background: url("../../assets/img/chat.png") center 1rem no-repeat;
+      background-size: 30%;
+    }
+    span:nth-of-type(2) {
+      background: url("../../assets/img/coll.png") center 1rem no-repeat;
+      background-size: 30%;
+    }
+  }
+  li:nth-of-type(2) {
+    background: #365c72;
+  }
+  li:nth-of-type(3) {
+    background: #5293ba;
   }
 }
 </style> 

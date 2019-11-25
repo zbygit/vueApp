@@ -80,6 +80,7 @@ export default {
     detail(index) {
       this.$router.push({ path: "/detail", query: { goodsId: index } });
     }
+   
   }
 };
 </script>
