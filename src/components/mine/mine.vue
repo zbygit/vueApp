@@ -2,12 +2,11 @@
   <div class="hello">
     <topNav>
       <div slot="center">{{pageMsg}}</div>
-     <div slot="left">返回</div>
     </topNav>
     <div id="userInfo">
       <div class="userArea">
         <img src="../../assets/img/userIcon.png" alt />
-        <p class="userNmae">你好美女</p>
+        <p class="userNmae">你好美女1</p>
       </div>
     </div>
     <!-- 操作選項 -->

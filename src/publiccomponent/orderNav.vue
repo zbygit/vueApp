@@ -1,18 +1,18 @@
 <template>
-  <ul class="orderNav">
-    <li class="currentLi">
+  <ul class="orderNav"@click="orderList($event)">
+    <li class="currentLi"index="0" >
       <slot name="one">全部</slot>
     </li>
-    <li>
-      <slot name="two">待付款</slot>
+    <li index="1">
+      <slot name="two" >待付款</slot>
     </li>
-    <li>
+    <li index="2">
       <slot name="three">待发货</slot>
     </li>
-    <li>
+    <li index="3">
       <slot name="four">待收货</slot>
     </li>
-    <li>
+    <li index="4">
       <slot name="five">待评价</slot>
     </li>
   </ul>
@@ -20,7 +20,15 @@
 
 <script>
 export default {
-  name: "orderNav"
+  name: "orderNav",
+  methods: {
+    orderList(e){
+      // console.log(e.target.index);
+      // console.log();
+      // var index =$(".orderNav").target
+       this.$emit('setShowOrder',$(e.target).attr("index"));
+    }
+  },
 };
 </script>
 

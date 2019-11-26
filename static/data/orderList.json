@@ -1,0 +1,64 @@
+{
+    "order": [
+        {
+            "goodsId": 0,
+            "time": "2019-11-1",
+            "status": 0,
+            "statusText": "已完成",
+            "goodsName": "商品名称1",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 1,
+            "time": "2019-11-2",
+            "status": 1,
+            "statusText": "待付款",
+            "goodsName": "商品名称3",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 2,
+            "time": "2019-11-3",
+            "status": 2,
+            "statusText": "待发货",
+            "goodsName": "商品名称4",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 3,
+            "time": "2019-11-4",
+            "status": 3,
+            "statusText": "待收货",
+            "goodsName": "商品名称5",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 4,
+            "time": "2019-11-1",
+            "status": 4,
+            "statusText": "待评价",
+            "goodsName": "商品名称2",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        }
+    ]
+}

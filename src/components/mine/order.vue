@@ -7,44 +7,42 @@
       </div>
       <div slot="center">全部订单</div>
     </topNav>
-    <orderNav></orderNav>
+    <orderNav class="orderNav" @setShowOrder="setShow"></orderNav>
     <div class="empty"></div>
- 
-    <orderList>
-      <div slot="time">2011-21-11</div>
-      <div slot="orderStatus1" v-if="current==0">已完成</div>
-      <div slot="orderStatus2" v-else-if="current==1">待付款</div>
-      <div slot="orderStatus2" v-else-if="current==2">待收款</div>
-      <div slot="orderStatus2" v-else-if="current==3">待收货</div>
-      <div slot="orderStatus1" v-else>待评价</div>
-      <img slot="goodsImg" src="../../assets/img/goods.jpg" />
-      <div slot="goodsText">121312312312312312312312313</div>
-      <div slot="goodsColor">312313</div>
-      <span slot="goodsPrice">343</span>
-      <span slot="num">23</span>
-      <span slot="nums">13</span>
-      <span slot="tatal">24</span>
-      <span slot="money">343</span>
-      <div slot="btns" v-if="current==0">
-        <span class="falsed" slot="one">查看物流</span>
-        <span class="conBtn" slot="two">评价</span>
-      </div>
-      <div slot="btns" v-if="current==1">
-        <span class="falsed" slot="one">取消订单</span>
-        <span class="conBtn" slot="two">立即付款</span>
-      </div>
-      <div slot="btns" v-if="current==2">
-        <span class="falsed" slot="one">申请退款</span>
-      </div>
-      <div slot="btns" v-if="current==3">
-        <span class="falsed" slot="one">查看物流</span>
-        <span class="conBtn" slot="two">确认收货</span>
-      </div>
-      <div slot="btns" v-if="current==4">
-        <span class="conBtn" slot="two">开票申请</span>
-        <span class="conBtn" slot="three">评价</span>
-      </div>
-    </orderList>
+    <div class="orderListArea">
+      <orderList v-for="(item,index) in orderListArray" :key="index">
+        <div slot="time">{{item.time}}</div>
+        <div slot="orderStatus1" v-if="item.status==0">{{item.statusText}}</div>
+        <div slot="orderStatus2" v-else="item.status!=0">{{item.statusText}}</div>
+        <img slot="goodsImg" @click="showOrderInfo(item.goodsId)" :src="item.goodsImg" />
+        <div slot="goodsText">{{item.goodsName}}</div>
+        <div slot="goodsColor">{{item.goodsColor}}</div>
+        <span slot="goodsPrice">{{item.goodsPrice}}</span>
+        <span slot="num">{{item.goodsNum}}</span>
+        <span slot="nums">{{item.goodsNum}}</span>
+        <span slot="tatal">{{item.goodsNum * item.goodsPrice }}</span>
+        <span slot="money">{{item.money}}</span>
+        <div slot="btns" v-if="item.status==0">
+          <span class="falsed" slot="one">查看物流</span>
+          <span class="conBtn" slot="two">评价</span>
+        </div>
+        <div slot="btns" v-if="item.status==1">
+          <span class="falsed" slot="one">取消订单</span>
+          <span class="conBtn" slot="two">立即付款</span>
+        </div>
+        <div slot="btns" v-if="item.status==2">
+          <span class="falsed" slot="one">申请退款</span>
+        </div>
+        <div slot="btns" v-if="item.status==3">
+          <span class="falsed" slot="one">查看物流</span>
+          <span class="conBtn" slot="two">确认收货</span>
+        </div>
+        <div slot="btns" v-if="item.status==4">
+          <span class="conBtn" slot="two">开票申请</span>
+          <span class="conBtn" slot="three">评价</span>
+        </div>
+      </orderList>
+    </div>
   </div>
 </template>
 
@@ -52,27 +50,48 @@
 import topNav from "../../publiccomponent/topNav";
 import orderNav from "../../publiccomponent/orderNav";
 import orderList from "../../components/mine/orderList";
+import { getOrderList } from "../../baseapi";
 export default {
   name: "order",
   components: { topNav, orderNav, orderList },
   data() {
-    return { current: 0 };
+    return { orderListArray: [] };
   },
-  mounted() {
-    this.getDom();
+  created() {
+    this.getOrderLists();
   },
   methods: {
-    getDom() {
-      let orderNav = $(".orderNav>li");
-      let that = this;
-      for (let index = 0; index < orderNav.length; index++) {
-        $(orderNav[index]).click(function() {
-          Cookies.set('foo', 'bar')
-          that.current = index;
-              Cookies.set('test',index);
-      $(this).addClass("currentLi").siblings().removeClass("currentLi");;
+    // 设置其他项显示
+    otherOrder(current) {
+      getOrderList().then(res => {
+        this.orderListArray = res.order.filter(function(item) {
+          return item.status == current;
         });
+      });
+    },
+    // 初始化显示及更改样式
+    setShow(val) {
+      let that = this;
+      let orderNav = $(".orderNav>li");
+      $(orderNav[+val])
+        .addClass("currentLi")
+        .siblings()
+        .removeClass("currentLi");
+      if (+val == 0) {
+        getOrderList().then(res => {
+          this.orderListArray = res.order;
+        });
+      } else {
+        that.otherOrder(+val);
       }
+    },
+    getOrderLists() {
+      getOrderList().then(res => {
+         this.orderListArray = res.order;
+      });
+    },
+    showOrderInfo(goodsId){
+      this.$router.push({path:"/orderInfo",query:{goodsId}})
     }
   }
 };
