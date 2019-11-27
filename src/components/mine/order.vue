@@ -13,7 +13,7 @@
       <orderList v-for="(item,index) in orderListArray" :key="index">
         <div slot="time">{{item.time}}</div>
         <div slot="orderStatus1" v-if="item.status==0">{{item.statusText}}</div>
-        <div slot="orderStatus2" v-else="item.status!=0">{{item.statusText}}</div>
+        <div slot="orderStatus2" v-else>{{item.statusText}}</div>
         <img slot="goodsImg" @click="showOrderInfo(item.goodsId,item.status)" :src="item.goodsImg" />
         <div slot="goodsText">{{item.goodsName}}</div>
         <div slot="goodsColor">{{item.goodsColor}}</div>
