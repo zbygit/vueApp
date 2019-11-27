@@ -20,7 +20,7 @@ export default {
       this.$router.back();
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -31,8 +31,9 @@ export default {
   width: 100%;
   height: 4rem;
   font-size: 1.8rem;
-  background: #ff6600;
+  background: #5485a2;
   display: flex;
+
   div {
     line-height: 4rem;
     color: #ffffff;
@@ -42,13 +43,13 @@ export default {
     width: 20%;
     div {
       width: 100%;
-      img{vertical-align: middle}
+      img {
+        vertical-align: middle;
+      }
     }
   }
   div:nth-of-type(2) {
     width: 60%;
-    background: #ff6600;
-
     font-weight: 900;
     text-align: center;
     div {
@@ -60,6 +61,9 @@ export default {
 
     div {
       width: 100%;
+      img{
+          vertical-align: middle;
+      }
     }
   }
 }

@@ -16,8 +16,10 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "style-loader": "^1.0.0",
+    "v-region": "^2.2.2",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^2.5.4",
+    "vue-layer": "^1.1.6",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

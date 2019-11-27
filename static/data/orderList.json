@@ -1,0 +1,139 @@
+{
+    "order": [
+        {
+            "goodsId": 0,
+            "orderCode": "12312414234",
+            "logistics": {
+                "names": "顺丰快递",
+                "code": "23422342323"
+            },
+            "user": {
+                "userName": "张炳茵",
+                "tel": "1312323213",
+                "address": "河北省保定市"
+            },
+            "order": {
+                "downTime": "2019-12-23 19:34:43",
+                "payTime": "2019-12-23 19:36:43",
+                "sendTime": "2019-12-23 21:36:43"
+            },
+            "time": "2019-11-1",
+            "status": 0,
+            "statusText": "已完成",
+            "goodsName": "商品名称1",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 1,
+            "orderCode": "12312414234",
+            "logistics": {
+                "names": "顺丰快递",
+                "code": "23422342323"
+            },
+            "user": {
+                "userName": "张炳茵",
+                "tel": "1312323213",
+                "address": "河北省保定市"
+            },
+            "order": {
+                "downTime": "2019-12-23 19:34:43",
+                "payTime": "2019-12-23 19:36:43",
+                "sendTime": "2019-12-23 21:36:43"
+            },
+            "time": "2019-11-2",
+            "status": 1,
+            "statusText": "待付款",
+            "goodsName": "商品名称3",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 2,
+            "orderCode": "12312414234",
+            "logistics": {
+                "names": "顺丰快递",
+                "code": "234ss22342323"
+            },
+            "user": {
+                "userName": "张炳茵",
+                "tel": "1312323213",
+                "address": "河北省保定市"
+            },
+            "order": {
+                "downTime": "2019-12-23 19:34:43",
+                "payTime": "2019-12-23 19:36:43",
+                "sendTime": "2019-12-23 21:36:43"
+            },
+            "time": "2019-11-3",
+            "status": 2,
+            "statusText": "待发货",
+            "goodsName": "商品名称4",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 3,
+            "orderCode": "12312414234",
+            "logistics": {
+                "names": "顺丰快递",
+                "code": "23422342323"
+            },
+            "user": {
+                "userName": "张炳茵",
+                "tel": "1312323213",
+                "address": "河北省保定市"
+            },
+            "order": {
+                "downTime": "2019-12-23 19:34:43",
+                "payTime": "2019-12-23 19:36:43",
+                "sendTime": "2019-12-23 21:36:43"
+            },
+            "time": "2019-11-4",
+            "status": 3,
+            "statusText": "待收货",
+            "goodsName": "商品名称5",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        },
+        {
+            "goodsId": 4,
+            "orderCode": "12312414234",
+            "logistics": {
+                "names": "顺丰快递",
+                "code": "23422342323"
+            },
+            "user": {
+                "userName": "张炳茵",
+                "tel": "1312323213",
+                "address": "河北省保定市"
+            },
+            "order": {
+                "downTime": "2019-12-23 19:34:43",
+                "payTime": "2019-12-23 19:36:43",
+                "sendTime": "2019-12-23 21:36:43"
+            },
+            "time": "2019-11-1",
+            "status": 4,
+            "statusText": "待评价",
+            "goodsName": "商品名称2",
+            "goodsImg": "https://img14.360buyimg.com/n0/jfs/t1/82911/16/10695/82698/5d81ef3eEbf27a4bf/4743470a3b665c02.jpg",
+            "goodsColor": "蓝色+标准",
+            "goodsPrice": "345",
+            "goodsNum": "2",
+            "money": "6"
+        }
+    ]
+}

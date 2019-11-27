@@ -20,7 +20,7 @@
     <div class="bottom">
       <span>——— 精选推荐 ———</span>
     </div>
-    <ul>
+    <ul class="listInfo">
       <li v-for="(item,index) of hotlist" :key="index">
         <img @click="detail(item.goodsId)" :src="item.goodsIconHome" alt />
         <div>{{item.goodsName}}</div>
@@ -28,12 +28,14 @@
         <div>{{item.goodsPriceOld}}</div>
       </li>
     </ul>
-    <div slot="bottom"><bottom></bottom></div>
+    <div slot="bottom">
+      <bottom></bottom>
+    </div>
   </div>
 </template>
 <script>
 import topNav from "../../publiccomponent/topNav";
-import bottom from "../../publiccomponent/bottomNav"
+import bottom from "../../publiccomponent/bottomNav";
 import carrousel from "../../publiccomponent/swiper";
 import { getBanner, getHome } from "../../baseapi";
 
@@ -78,6 +80,8 @@ export default {
       });
     },
     detail(index) {
+      // 使用this.$router.push()进行路由跳转
+      // 使用jquery传递参数 ，参数已键值对形式传递（query传参页面刷新参数不会消失）
       this.$router.push({ path: "/detail", query: { goodsId: index } });
     }
   }
@@ -151,10 +155,14 @@ export default {
 .bottom {
   width: 100%;
   height: 50px;
+
   span {
     line-height: 50px;
     color: grey;
   }
+}
+.listInfo {
+  margin-bottom: 6rem;
 }
 #con ul {
   display: inline-block;
@@ -176,7 +184,6 @@ export default {
       word-wrap: normal;
       height: 2rem;
     }
-   
   }
 }
 </style>

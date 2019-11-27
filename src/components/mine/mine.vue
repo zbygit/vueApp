@@ -2,7 +2,6 @@
   <div class="hello">
     <topNav>
       <div slot="center">{{pageMsg}}</div>
-     <div slot="left">返回</div>
     </topNav>
     <div id="userInfo">
       <div class="userArea">
@@ -142,7 +141,7 @@ export default {
               alert(2);
               break;
             case 3:
-              alert(3);
+            that.$router.push('/address');
               break;
             case 4:
               alert(4);
