@@ -10,16 +10,22 @@
           <p>{{item.bookName}}</p>
           <p class="price">{{item.bookPrice}}</p>
           <p>
-           <button  @click="bookhotList[index].bookPrice-=1">-</button>
-                {{ bookhotList.bookPrice }}    1
-                <button @click="bookhotList[index].bookPrice+=1">+</button>
-          </p>
+          <button  @click="numjianjian">-</button>
+               {{ num}}
+                <button @click="numjiajia">+</button>
+          </p> 
         <p> <button type="button" @click="remove(index)">删除</button>   </p>
-        </li>
-                           
-    
-      </ul>
+        </li> 
+     
+     </ul>
+    <!-- <div class="b2">
+      <button  type="button" @click="totalPrice" >合计</button>
+      <button type="" value="结算">结算</button>
+                
+   </div> -->
     </div>
+    <!-- <div @click="totalPrice">  总价：￥{{totalPrice}}   </div>  -->
+    <div>总价：￥{{totalPrice()}} </div>  
        <div slot="bottom"><bottom></bottom></div>
   </div>
 </template>
@@ -33,13 +39,15 @@ export default {
     data(){
       return {
        pageMsg:'购物车',
-       bookhotList:null
+       bookhotList:null,
+       num:1,
+    
+      
           }
     },
   
     components:{topNav,bottom
-        // Header
-        // ,Swiper
+    
     },
     created(){
     
@@ -47,7 +55,32 @@ export default {
       
     },
     methods:{
-      getl(){
+  
+  numjiajia(){
+     this.num+=1;
+    
+   },
+    numjianjian(){
+          this.num-=1;
+       
+
+    
+   },
+    totalPrice:function (){
+                    var totalP = 0;
+                    this.totalP=0
+                    for (let i = 0;i<this.bookhotList.length;i++) {
+                        // this.bookhotList[Id]["num"]=1;
+                        this.totalP+=this.bookhotList[i].bookPrice*this.bookhotList[i].num;
+                        console.log(this.bookhotList[i].bookPrice);
+                        console.log(this.bookhotList[i].num);
+                      
+                    }
+                    console.log(totalP)
+                    return totalP;
+                },
+     
+     getl(){
          gethotlist().then(res=>{console.log(res)
           this.bookhotList=res.hotlist;
         })},
@@ -64,10 +97,13 @@ export default {
 // <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 @border-botm: 1px solid #f5f5f5;
+.hello{margin-bottom: 100px}
 .book {
   width: 90%;
-  margin: 0 auto;
+  margin: 4rem 0 6rem ;
   background: #fff;
+  
+  height:calc(100% - 10rem) ;
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -76,21 +112,44 @@ export default {
       border-bottom: @border-botm;
       width: 100%;
       list-style-type: none;
-
-      p {
+      .b2{
+      margin: 5rem;
+      }
+//  .b2  button{
+//          width:75px;  
+//          height:40px;
+//          line-height: 40px;
+//          text-align: center;                  
+//       }
+//   .b2  button:nth-of-type(1){
+//        background: black;
+//      }
+//     .b2  button:nth-of-type(2){
+//          background: green;
+//       }
+        
+     p {
         box-sizing: border-box;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
-        // padding: 2px;
         color: #232326;
-        font-size: 13px;
+        font-size: 18px;
         padding-bottom: 38px;
      }
-      .price {
+       input  button{
+       width: 40px;
+       height:20px;
+       }
+     
+     
+     
+     
+     
+     .price {
         color: red;
-        font-size: 15px;
+        font-size: 19px;
       }
       &:nth-child(even) {
         border-left: @border-botm;
@@ -102,4 +161,5 @@ export default {
     }
   }
 }
+ 
 </style>
