@@ -90,7 +90,6 @@ export default {
 <style lang="less" scoped>
 .search {
   height: 3rem;
-
   margin: 0 1rem;
   width: calc(100% - 2rem);
 
@@ -161,8 +160,19 @@ export default {
     color: grey;
   }
 }
+
 .listInfo {
-  margin-bottom: 6rem;
+  width: 100%;
+ display:flex;
+ flex-wrap: wrap;
+ list-style: none;
+ li{
+   width: 50%;
+ }
+  img{
+    width: 12rem;
+    height: 12rem;
+  }
 }
 #con ul {
   display: inline-block;
