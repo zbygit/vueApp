@@ -34,7 +34,10 @@
         <span>客服</span>
         <span id="count" @click="count(currentGoods.goodsId)">收藏</span>
       </li>
-      <li @click="addToshopcar(currentGoods)">加入购物车</li>
+      <li class="addCar" @click="addToshopcar(currentGoods)">
+        加入购物车
+        <span class="num">{{goodsNum}}</span>
+      </li>
       <li>立即购买</li>
     </ul>
   </div>
@@ -49,6 +52,7 @@ export default {
   data() {
     return {
       msg: "商品详情",
+      goodsNum: 0,
       currentGoods: [],
       content: ""
     };
@@ -118,9 +122,15 @@ export default {
       let countStatus = countCookieArray.some(function(item) {
         return item == that.$route.query.goodsId;
       });
+
       // 返回值为true的时候将添加count类名
       if (countStatus == true) {
         $("#count").addClass("count");
+      }
+      let carCookie = Cookies.get("car");
+      carCookie = carCookie == undefined ? [] : JSON.parse(carCookie);
+      if (carCookie[that.$route.query.goodsId] != undefined) {
+        this.goodsNum = carCookie[that.$route.query.goodsId].num;
       }
     },
     // 收藏按钮点击事件
@@ -157,9 +167,11 @@ export default {
         for (let i = 0; i < carCookie.length; i++) {
           if (carCookie[i].id == goodsItem.goodsId) {
             carCookie[i].num++;
+            this.goodsNum = carCookie[i].num;
           }
         }
       } else {
+        this.goodsNum = 1;
         let goods = {
           id: goodsItem.goodsId,
           num: 1,
@@ -172,9 +184,6 @@ export default {
       }
 
       Cookies.set("car", JSON.stringify(carCookie), { expires: 7 });
-      let carCookies = Cookies.get("car");
-      carCookies = carCookies == undefined ? [] : JSON.parse(carCookies);
-      console.log("后", carCookies);
     }
   }
 };
@@ -286,6 +295,17 @@ export default {
   }
   li:nth-of-type(2) {
     background: #365c72;
+    position: relative;
+    span {
+      position: absolute;
+      top: 0;
+      left: calc(100% - 3rem);
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      background: #ff6600;
+      border-radius: 50%;
+    }
   }
   li:nth-of-type(3) {
     background: #5293ba;
