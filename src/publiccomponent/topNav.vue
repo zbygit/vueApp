@@ -61,6 +61,9 @@ export default {
 
     div {
       width: 100%;
+      img{
+          vertical-align: middle;
+      }
     }
   }
 }

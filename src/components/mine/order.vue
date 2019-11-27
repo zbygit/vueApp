@@ -14,7 +14,7 @@
         <div slot="time">{{item.time}}</div>
         <div slot="orderStatus1" v-if="item.status==0">{{item.statusText}}</div>
         <div slot="orderStatus2" v-else="item.status!=0">{{item.statusText}}</div>
-        <img slot="goodsImg" @click="showOrderInfo(item.goodsId)" :src="item.goodsImg" />
+        <img slot="goodsImg" @click="showOrderInfo(item.goodsId,item.status)" :src="item.goodsImg" />
         <div slot="goodsText">{{item.goodsName}}</div>
         <div slot="goodsColor">{{item.goodsColor}}</div>
         <span slot="goodsPrice">{{item.goodsPrice}}</span>
@@ -47,10 +47,10 @@
 </template>
 
 <script>
-import topNav from "../../publiccomponent/topNav";
-import orderNav from "../../publiccomponent/orderNav";
-import orderList from "../../components/mine/orderList";
-import { getOrderList } from "../../baseapi";
+import topNav from "../../publiccomponent/topNav"
+import orderNav from "../../publiccomponent/orderNav"
+import orderList from "../../components/mine/orderList"
+import { getOrderList } from "../../baseapi"
 export default {
   name: "order",
   components: { topNav, orderNav, orderList },
@@ -90,8 +90,8 @@ export default {
          this.orderListArray = res.order;
       });
     },
-    showOrderInfo(goodsId){
-      this.$router.push({path:"/orderInfo",query:{goodsId}})
+    showOrderInfo(goodsId,status){
+      this.$router.push({path:"/orderInfo",query:{goodsId,status}})
     }
   }
 };

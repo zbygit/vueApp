@@ -141,7 +141,7 @@ export default {
               alert(2);
               break;
             case 3:
-              alert(3);
+            that.$router.push('/address');
               break;
             case 4:
               alert(4);
