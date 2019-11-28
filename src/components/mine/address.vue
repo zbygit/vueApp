@@ -12,7 +12,7 @@
     </topNav>
     <div class="infoContent">
       <div class="noHas" v-if="hasAddress">暂无地址相关信息</div>
-      <div class="topContent" v-bind:class="'defaultItem'+item.default" v-for="item of AddressCookie">
+      <div class="topContent" :class="'defaultItem'+item.default" v-for="(item,index) of AddressCookie" :key="index">
         <div class="line">
           <div class="left">{{item.user}}</div>
           <div class="right">{{item.tel}}</div>
