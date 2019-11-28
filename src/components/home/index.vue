@@ -20,12 +20,14 @@
     <div class="bottom">
       <span>——— 精选推荐 ———</span>
     </div>
-    <ul class="listInfo">
-      <li v-for="(item,index) of hotlist" :key="index">
-        <img @click="detail(item.goodsId)" :src="item.goodsIconHome" alt />
-        <div>{{item.goodsName}}</div>
-        <div>{{item.goodsPriceNew}}</div>
-        <div>{{item.goodsPriceOld}}</div>
+      <ul class="collList">
+      <li v-for="(item,index) of hotlist">
+        <img  @click="detail(item.goodsId)" :src="item.goodsIconHome" alt />
+        <p class="name">{{item.goodsName}}</p>
+        <p class="price">
+          <span class="currentPrice">{{item.goodsPriceNew}}</span>
+          <span class="oldPrice">{{item.goodsPriceOld}}</span>
+        </p>
       </li>
     </ul>
     <div slot="bottom">
@@ -161,18 +163,52 @@ export default {
   }
 }
 
-.listInfo {
-  width: 100%;
- display:flex;
- flex-wrap: wrap;
- list-style: none;
- li{
-   width: 50%;
- }
-  img{
-    width: 12rem;
-    height: 12rem;
-  }
+.collList{
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-bottom: 7rem;
+    float: left;
+    list-style: none;
+    li{
+        float: left;
+        width: 50%;
+        border: 1px solid #cccccc;
+        margin: -1px;
+        text-align: left;
+        img{
+            width: 15rem;
+            height: 15rem;
+            margin-top: 1rem;
+            vertical-align: middle;
+            margin-left: calc((100% - 15rem)/2);
+        }
+        .name{
+            width: calc(100% -calc(100% - 15rem));
+            font-weight: 600;
+            font-size:1.6rem ;
+            height: 2rem;
+            line-height: 2rem;
+            margin-left: calc((100% - 15rem)/2);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: normal;
+        }
+        .price{
+            width: 100%;       
+            line-height: 2rem;
+            margin-left: calc((100% - 15rem)/2);
+            .currentPrice{
+                font-size:1.8rem ;
+                font-weight: 600;
+            }
+            .oldPrice{
+                font-size:1.4rem ;
+                font-weight: 400;margin-left: 1rem;
+               text-decoration: line-through;
+               color: #cccccc;
+            }
+        }
+    }
 }
 #con ul {
   display: inline-block;

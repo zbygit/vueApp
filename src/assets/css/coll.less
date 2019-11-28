@@ -1,0 +1,70 @@
+.doing{
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+      float: left;
+    text-align: left;
+    #chooseAll{
+        width: 1.5rem;
+        height: 1.5rem;
+        float: left;
+        margin-left: 1rem;
+        margin-top: 0.7rem;
+    }
+    #edit{
+        width: 3rem;
+        height: 2rem;
+        float: right;
+        margin-right: 1rem;
+        line-height: 2rem;
+        text-align: center;
+        margin-top: 0.5rem;
+        border: 1px solid #cccccc;
+    }
+}
+.collList{
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    float: left;
+    list-style: none;
+    li{
+        float: left;
+        width: 50%;
+        border: 1px solid #cccccc;
+        margin: -1px;
+        text-align: left;
+        img{
+            width: 15rem;
+            height: 15rem;
+            margin-top: 1rem;
+            vertical-align: middle;
+            margin-left: calc((100% - 15rem)/2);
+        }
+        .name{
+            width: calc(100% -calc(100% - 15rem));
+            font-weight: 600;
+            font-size:1.6rem ;
+            height: 2rem;
+            line-height: 2rem;
+            margin-left: calc((100% - 15rem)/2);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: normal;
+        }
+        .price{
+            width: 100%;       
+            line-height: 2rem;
+            margin-left: calc((100% - 15rem)/2);
+            .currentPrice{
+                font-size:1.8rem ;
+                font-weight: 600;
+            }
+            .oldPrice{
+                font-size:1.4rem ;
+                font-weight: 400;margin-left: 1rem;
+               text-decoration: line-through;
+               color: #cccccc;
+            }
+        }
+    }
+}

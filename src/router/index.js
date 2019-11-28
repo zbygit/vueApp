@@ -9,7 +9,6 @@ import orderInfo from '@/components/mine/orderInfo'
 import address from '@/components/mine/address'
 import addAddress from '@/components/mine/addAddress'
 import collection from '@/components/mine/collection'
-
 Vue.use(Router)
 
 export default new Router({
@@ -52,11 +51,11 @@ export default new Router({
         path: "/addAddress",
         name: "addAddress",
         component: addAddress
-    }
-    , {
+    }, {
         path: "/collection",
         name: "collection",
         component: collection
     }]
+    
 
 })

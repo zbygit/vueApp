@@ -91,13 +91,15 @@
         </div>
       </div>
     </div>
-  <div slot="bottom"><bottom></bottom></div>
+    <div slot="bottom">
+      <bottom></bottom>
+    </div>
   </div>
 </template>
 
 <script>
-import topNav from "../../publiccomponent/topNav"
-import bottom from "../../publiccomponent/bottomNav"
+import topNav from "../../publiccomponent/topNav";
+import bottom from "../../publiccomponent/bottomNav";
 export default {
   name: "mine",
   data() {
@@ -107,7 +109,8 @@ export default {
   },
 
   components: {
-    topNav,bottom
+    topNav,
+    bottom
   },
 
   mounted() {
@@ -129,19 +132,19 @@ export default {
       let wait = $(".wait");
 
       for (let index = 0; index < ItemBtn.length; index++) {
-           $(ItemBtn[index]).click(function() {
+        $(ItemBtn[index]).click(function() {
           switch (index) {
             case 0:
-             that.$router.push('/order');
+              that.$router.push("/order");
               break;
             case 1:
               alert(1);
               break;
             case 2:
-              alert(2);
+              that.$router.push("/collection");
               break;
             case 3:
-            that.$router.push('/address');
+              that.$router.push("/address");
               break;
             case 4:
               alert(4);
@@ -154,9 +157,8 @@ export default {
               break;
           }
         });
-        
       }
-    
+
       console.log(ItemBtn.length);
     }
   }
