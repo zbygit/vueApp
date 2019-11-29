@@ -7,21 +7,24 @@
       <ul>
         <li v-for="(item,index) of bookhotList" :key="index">
           <img :src="item.bookImg" :alt="item.bookImg" />
+
           <p>{{item.bookName}}</p>
+
           <p class="price">{{item.bookPrice}}</p>
-          <p >
+
+          <p>
             <button @click="numjianjian(item.bookId)">-</button>
             {{ item.num}}
             <button @click="numjiajia(item.bookId)">+</button>
           </p>
-          <p >
+
+          <p>
             <button type="button" @click="remove(index)">删除</button>
           </p>
         </li>
       </ul>
-    
     </div>
-   
+
     <div>总价：￥{{totalP}}</div>
     <div slot="bottom">
       <bottom></bottom>
@@ -40,7 +43,7 @@ export default {
       pageMsg: "购物车",
       bookhotList: null,
 
-      totalP:0
+      totalP: 0
     };
   },
 
@@ -52,23 +55,22 @@ export default {
     numjiajia(id) {
       console.log(id);
 
-   console.log(this.bookhotList);
-      this.bookhotList[id].num+=1;
-       this.totalP=this.bookhotList.reduce(function (current,next,index) {
-        return current+next.bookPrice*next.num;
-      },0)
+      console.log(this.bookhotList);
+      this.bookhotList[id].num += 1;
+      this.totalP = this.bookhotList.reduce(function(current, next, index) {
+        return current + next.bookPrice * next.num;
+      }, 0);
     },
     numjianjian(id) {
-      if (  this.bookhotList[id].num <= 0) {
-          this.bookhotList[id].num = 0;
+      if (this.bookhotList[id].num <= 0) {
+        this.bookhotList[id].num = 0;
       } else {
-         this.bookhotList[id].num -= 1;
+        this.bookhotList[id].num -= 1;
       }
-       this.totalP=this.bookhotList.reduce(function (current,next,index) {
-        return current+next.bookPrice*next.num;
-      },0)
+      this.totalP = this.bookhotList.reduce(function(current, next, index) {
+        return current + next.bookPrice * next.num;
+      }, 0);
     },
-    
 
     getl() {
       gethotlist().then(res => {
@@ -95,7 +97,7 @@ export default {
   width: 90%;
   margin: 4rem 0 6rem;
   background: #fff;
-
+  // position:relative;
   height: calc(100% - 10rem);
   ul {
     display: flex;
@@ -110,20 +112,18 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        
+
         color: #232326;
         font-size: 18px;
         padding-bottom: 38px;
-      
-     }
-      
+      }
+      // p:nth-of-type(1) {
+      // position: relative
+      // left：-30px;
 
-     
-    
-    
-    
-    
-    input button {
+      // }
+
+      input button {
         width: 40px;
         height: 20px;
       }
@@ -131,8 +131,9 @@ export default {
       .price {
         color: red;
         font-size: 19px;
-        //  padding-right:110px; 
-    }
+        position: relative;
+        left: -30px;
+      }
       &:nth-child(even) {
         border-left: @border-botm;
       }
